@@ -1,11 +1,17 @@
-# to run backend 
+# to run backend \ live production (Backend \ Live Production)
+node server.js
 
-node server.js in backend folder
+# to run backend with hot-reload (Backend \ Development with hot-reload)
+npx nodemon server.js 
 
-# to run frontend build
+# to run frontend with hot-reload (Frontend \ Development with hot-reload)
+npm run dev 
 
-npm run build in frontend folder
+# to build for production (Frontend \ Build for production)
+npm run build
 
-# to run npm run dev 
+# to run both backend and frontend with hot-reload (Backend & Frontend with hot-reload)
+npx nodemon server.js 
+npm run dev
 
-npm run dev in frontend folder
+**browse from frontend port**
