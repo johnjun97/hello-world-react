@@ -13,6 +13,10 @@ npm run dev
 
 **browse from frontend port**
 
+# build
+
+npm run build
+
 # 1. Stage changes:
 
 git add .
