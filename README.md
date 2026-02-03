@@ -30,4 +30,4 @@ git commit -m "Update message"
 git push origin main
 
 You only need -u the first time you push a branch to set upstream.
-After that, just git push origin main is enough.
+After that, just git push origin main is enough
