@@ -8,7 +8,7 @@ app.use(express.json());
 
 // API
 app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello World from backend!" });
+  res.json({ message: "Hello World from api!" });
 });
 
 // Serve compiled frontend (production)
