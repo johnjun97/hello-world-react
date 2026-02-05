@@ -9,7 +9,7 @@ npm run dev
 
 # to run both backend and frontend with hot-reload (Backend & Frontend with hot-reload)
 npx nodemon backend\server.js 
-npm run dev
+npm run dev //frontend
 
 **browse from frontend port**
 
@@ -17,7 +17,7 @@ npm run dev
 
 npm run build
 
-# 1. Stage changes:
+# 1. Stage changes: (git status: check )
 
 git add .
 
