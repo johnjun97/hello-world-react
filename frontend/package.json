@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://<your-github-username>.github.io/<repo-name>",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
