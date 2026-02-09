@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://<your-github-username>.github.io/<repo-name>",
+  "homepage": "https://johnjun97.github.io/hello-world-react",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
