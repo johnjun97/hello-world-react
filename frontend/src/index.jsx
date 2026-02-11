@@ -2,7 +2,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";  // React 18+
 import App from "./App.jsx";                    // Your root component
 import "./style.css";                           // optional global styles
-import TestSupabase from "./components/TestSupabase.jsx";
+import TestSupabase from "./components/TestSupabase.jsx"; 
+// import  Auth from "./components/Auth.jsx";
 
 // Get the root div from index.html
 const rootElement = document.getElementById("root");
@@ -14,6 +15,7 @@ const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <App />
-    <TestSupabase />
+    {/* <TestSupabase /> */}
+    {/* <Auth /> */}
   </React.StrictMode>
 );
