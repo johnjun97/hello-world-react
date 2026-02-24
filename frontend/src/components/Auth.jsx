@@ -8,19 +8,17 @@ export default function Auth() {
 
   // Auto-detect redirect URL for local or deployed
   const redirectUrl =
-    window.location.hostname === "localhost"
-      ? "http://localhost:5173"
-      : "https://your-username.github.io/your-repo"; // replace with your repo URL
+    import.meta.env.VITE_SUPABASE_REDIRECT_URL || "http://localhost:5173";
 
   // Magic link login
-  const loginMagicLink = async () => {
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: { redirectTo: redirectUrl }
-    });
-    if (error) setMsg(error.message);
-    else setMsg("Check your email for the magic link!");
-  };
+  // const loginMagicLink = async () => {
+  //   const { error } = await supabase.auth.signInWithOtp({
+  //     email,
+  //     options: { redirectTo: redirectUrl }
+  //   });
+  //   if (error) setMsg(error.message);
+  //   else setMsg("Check your email for the magic link!");
+  // };
 
   // Email/password login
   const loginWithPassword = async () => {
@@ -44,11 +42,20 @@ export default function Auth() {
   };
 
   // OAuth login (Google example)
-  const loginWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: redirectUrl }
+  // const loginWithGoogle = async () => {
+  //   await supabase.auth.signInWithOAuth({
+  //     provider: "google",
+  //     options: { redirectTo: redirectUrl }
+  //   });
+  // };
+
+  // Forgot password
+  const resetPassword = async () => {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: redirectUrl
     });
+    if (error) setMsg(error.message);
+    else setMsg("Check your email to reset your password.");
   };
 
   return (
@@ -63,16 +70,17 @@ export default function Auth() {
       />
       <input
         type="password"
-        placeholder="Password (optional for magic link)"
+        placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
       <div style={{ marginTop: "10px" }}>
         <button onClick={signUp}>Sign Up</button>
-        <button onClick={loginWithPassword}>Login with Password</button>
-        <button onClick={loginMagicLink}>Login with Magic Link</button>
-        <button onClick={loginWithGoogle}>Login with Google</button>
+        <button onClick={loginWithPassword}>Login</button>  
+        <button onClick={resetPassword}>Forgot Password?</button>
+        {/* <button onClick={loginMagicLink}>Login with Magic Link</button> */}
+        {/* <button onClick={loginWithGoogle}>Login with Google</button> */}
       </div>
 
       <p>{msg}</p>

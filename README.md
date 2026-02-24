@@ -5,13 +5,15 @@ node backend\server.js
 npx nodemon backend\server.js 
 
 # to run frontend with hot-reload (Frontend \ Development with hot-reload)
-npm run dev
+npm run dev //frontend
 
 # to run both backend and frontend with hot-reload (Backend & Frontend with hot-reload)
 npx nodemon backend\server.js 
 npm run dev //frontend
 
 **browse from frontend port**
+
+
 
 # build
 
